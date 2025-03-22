@@ -1,0 +1,399 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b307a46e-e07f-4625-a051-a4803fa3e556",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "content = \"\"\"ICTAK\n",
+    "Thejaswini,\n",
+    "Technopark Rd,\n",
+    "Technopark Campus,\n",
+    "Thiruvananthapuram,\n",
+    "Kerala 695581\"\"\"\n",
+    "\n",
+    "with open(file_path, \"w\") as file:\n",
+    "    file.write(content)\n",
+    "\n",
+    "print(\"File created successfully!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a0e9c018-5081-4e46-b176-a538b75b571e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(\"sample_data.txt\", \"r\") as file:\n",
+    "    content = file.read()  \n",
+    "    print(content)  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ef63b2ed-0152-4f32-96f5-b4f5dd025480",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(\"myfile.txt\", \"a\") as file:\n",
+    "    file.write(\"\\nAppending a new line!\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "46cc274b-d97b-4b9b-8e23-9f8603a4d228",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "data = {\"Id\": [1, 2, 3],\n",
+    "        \"Name\": [\"Alice\", \"Bob\", \"Charlie\"],\n",
+    "        \"Subject\": [\"Science\", \"Maths\", \"History\"]}\n",
+    "df = pd.DataFrame(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d84f4bbc-4285-4876-a394-c9eb61c0eb4b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "\n",
+    "data = {\n",
+    "    \"Id\": [1, 2, 3],\n",
+    "    \"Name\": [\"Alice\", \"Bob\", \"Charlie\"],\n",
+    "    \"Subject\": [\"Science\", \"Maths\", \"History\"]\n",
+    "}\n",
+    "\n",
+    "\n",
+    "df = pd.DataFrame(data)\n",
+    "\n",
+    "\n",
+    "file_path = r\"C:\\Users\\Remya\\Documents\\data.xlsx\"\n",
+    "\n",
+    "\n",
+    "df.to_excel(file_path, sheet_name=\"Sheet1\", index=False)\n",
+    "\n",
+    "print(\"Excel file saved successfully in Documents! \")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3723dac4-632d-417f-9a42-6a341c995095",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import pandas as pd\n",
+    "\n",
+    "\n",
+    "downloads_folder = r\"C:\\Users\\Remya\\Downloads\"\n",
+    "\n",
+    "\n",
+    "file_list = os.listdir(downloads_folder)\n",
+    "\n",
+    "\n",
+    "df = pd.DataFrame(file_list, columns=[\"File Name\"])\n",
+    "\n",
+    "\n",
+    "csv_path = os.path.join(downloads_folder, \"download_list.csv\")\n",
+    "\n",
+    "\n",
+    "df.to_csv(csv_path, index=False)\n",
+    "\n",
+    "print(f\"CSV file saved successfully: {csv_path} \")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b40ab140-7ff1-4965-b9a7-3bf846bc20ff",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "random_array = np.random.rand(10, 10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "40783017-6fb6-420d-aae9-10d264ce2b7e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "\n",
+    "random_array = np.array([[1, 2, 3], [4, 5, 6]])\n",
+    "\n",
+    "\n",
+    "np.save(\"random_array.npy\", random_array)\n",
+    "\n",
+    "print(\"NumPy file saved successfully! \")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "938005c8-3e91-4d80-9337-1efed2e9ecc2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import os\n",
+    "\n",
+    "\n",
+    "npy_file_path = \"random_array.npy\"  \n",
+    "txt_file_path = r\"C:\\Users\\Remya\\Documents\\random.txt\"\n",
+    "\n",
+    "\n",
+    "random_array = np.load(npy_file_path)\n",
+    "\n",
+    "\n",
+    "np.savetxt(txt_file_path, random_array, delimiter=\";\", fmt=\"%d\")  \n",
+    "\n",
+    "print(f\"Text file saved successfully at: {txt_file_path} \")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "150240b8-2a1c-4223-ae14-69bf37271d58",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "The size of the dataset (hour.csv) is:  \n",
+    "\n",
+    "Number of rows:17,379  \n",
+    "Number of columns: 17  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1931ac23-e5ca-4370-bae1-0cb419608799",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "| Column       | Data Type  | Description |\n",
+    "|-------------|-----------|-------------|\n",
+    "| instant  | `int64`   | Record index |\n",
+    "| dteday   | `object`  | Date (string format) |\n",
+    "| season   | `int64`   | 1 (Spring), 2 (Summer), 3 (Fall), 4 (Winter) |\n",
+    "| yr       | `int64`   | Year (0 = 2011, 1 = 2012) |\n",
+    "| mnth     | `int64`   | Month (1-12) |\n",
+    "| hr       | `int64`   | Hour of the day (0-23) |\n",
+    "| holiday  | `int64`   | 0 = No, 1 = Yes |\n",
+    "| weekday  | `int64`   | Day of the week (0 = Sunday, ..., 6 = Saturday) |\n",
+    "| workingday | `int64`  | 0 = No, 1 = Yes |\n",
+    "| weathersit | `int64`  | 1 (Clear), 2 (Misty/Cloudy), 3 (Light Snow/Rain), 4 (Heavy Rain) |\n",
+    "| temp     | `float64` | Normalized temperature (0-1) |\n",
+    "| atemp    | `float64` | Normalized \"feels-like\" temperature (0-1) |\n",
+    "| hum      | `float64` | Normalized humidity (0-1) |\n",
+    "| windspeed| `float64` | Normalized wind speed (0-1) |\n",
+    "| casual   | `int64`   | Number of casual bike rentals |\n",
+    "| registered | `int64`  | Number of registered user rentals |\n",
+    "| cnt    | `int64`   | Total bike rentals (casual + registered) |\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bf32bf67-c73b-4272-93d0-ce76c4c96f4c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "no missing values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a6615307-6754-46e4-9758-a5ed361afe19",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Mean: 0.1901  \n",
+    "Median: 0.194  \n",
+    "Standard Deviation: 0.1223  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "36bc6749-b988-4298-b23b-8075f94145a3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "- Approach: Used the Interquartile Range (IQR) method to identify outliers.\n",
+    "- Findings:\n",
+    "- Lower Bound: Values below Q1 - 1.5  IQR\n",
+    "- Upper Bound: Values above Q3 + 1.5  IQR\n",
+    "- Outliers Detected: 342 rows contain outliers.\n",
+    "- Boxplot: The visualization shows high wind speed values as outliers.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d775bcd9-a906-4746-bb36-9a0822dc9d84",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    " Approach: Used Pearson correlation to measure relationships between numerical columns.\n",
+    "- Key Findings:\n",
+    "  - temp & atemp→ Strong positive correlation (~0.99): Expected since `atemp` is a feels-like temperature.\n",
+    "  - temp & cnt → Moderate positive correlation (~0.39): Warmer temperatures generally increase bike rentals.\n",
+    "  - windspeed & cnt → Slight negative correlation (~-0.23): Higher wind speeds might discourage biking.\n",
+    "  - hum & cnt → Weak negative correlation (~-0.10): Higher humidity slightly reduces bike rentals.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "78f16682-489e-45dc-9b8a-bcaaf587e941",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "1. Dataset Overview:  \n",
+    "   - The dataset contains 17,379 rows and 17 columns, with no missing values.  \n",
+    "   - Data types are mostly numerical, except for categorical identifiers like season, weather, and holiday.  \n",
+    "\n",
+    "2. Statistical Findings:\n",
+    "   - Windspeed Statistics → Mean: 0.19, Median: 0.194, Std: 0.12\n",
+    "   - Outliers in windspeed → 342 extreme values detected.  \n",
+    "\n",
+    "3. Correlation Insights:  \n",
+    "   - Temperature (`temp`) has the strongest positive correlation with bike rentals (`cnt`) (~0.39).  \n",
+    "   - Feels-like temperature (`atemp`) and actual temperature (`temp`) are almost identical (~0.99 correlation).  \n",
+    "   - Higher windspeed and humidity show slight negative impacts on bike rentals.\n",
+    "\n",
+    "4. Patterns in Rentals:\n",
+    "   - More bikes are rented on warmer days, likely due to pleasant biking conditions.  \n",
+    "   - Extreme wind speeds may discourage biking activity.\n",
+    "   - Humidity has a weak negative effect on rentals, but it’s not a major factor.  \n",
+    "\n",
+    "Conclusion: \n",
+    "The dataset suggests that weather conditions significantly influence bike rentals, with temperature being the most important factor. Understanding these patterns can help optimize bike availability for high-demand periods!  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d043b869-bf87-499f-9470-cd7b1f778c2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Most Popular Season for Bike Rentals: Fall\n",
+    "\n",
+    "Total Bike Rentals by Season:\n",
+    " Fall → 1,061,129 rentals (highest!)  \n",
+    "2️⃣ Summer → 918,589 rentals  \n",
+    "3️⃣ Winter → 841,613 rentals  \n",
+    "4️⃣ Spring → 471,348 rentals (lowest)  \n",
+    "\n",
+    "Insight:  \n",
+    "- Fall had the highest number of rentals!  \n",
+    "- Spring had the lowest rentals, likely due to unpredictable weather or rain.  \n",
+    "- Summer & Winter had similar rentals, suggesting that biking remains popular even in colder months.  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9bcb32c7-49cd-4e9f-b292-ff773b6cd592",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    " Peak Hour for Bike Rentals: 5 PM (17:00)\n",
+    "\n",
+    "Total Rentals at Peak Hour: 336,860 🚲\n",
+    "\n",
+    "Insights:\n",
+    "\n",
+    "The highest bike rentals occur at 5 PM, likely due to the evening rush hour when people leave work or school.\n",
+    "\n",
+    "Rentals gradually increase from morning to late afternoon, peaking at 5 PM."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6dd9604c-c284-42d8-b240-a88b9bb1cbc5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Day with the Most Bike Rentals: Friday"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "184b3f2a-7985-4204-a899-40950654f41e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    " Peak Hour for Casual Users: 2 PM (14:00)\n",
+    "\n",
+    "Total Casual Rentals at Peak Hour: 55,089 🚲\n",
+    "\n",
+    "Insights:\n",
+    "Casual users (non-registered) rent the most bikes around 2 PM, which suggests they might be tourists or leisure riders rather than commuters.\n",
+    "\n",
+    "Unlike registered users who peak during rush hours (morning & evening), casual users prefer afternoons when the weather is pleasant."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "53f7ac4f-657f-4921-aaee-e9297fa074df",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Maximum Temperature Observed in Each Season:\n",
+    "\n",
+    "Fall → 1.00 \n",
+    "\n",
+    "Summer → 0.94\n",
+    "\n",
+    "Winter  → 0.76\n",
+    "\n",
+    "Spring  → 0.72 "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
